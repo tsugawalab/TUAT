@@ -73,7 +73,8 @@
   align-items: center;
 }
 
-.icon {
+.icon a {
+  text-decoration: none;
   display: flex;
   align-items: center;
 }
@@ -106,11 +107,6 @@
 }
 .icon.contact a:before {
   content: '\f2bd';
-}
-
-.topMenus a {
-  display: block;
-  text-decoration: none;
 }
 
 .topMenus .subMenus:before {
