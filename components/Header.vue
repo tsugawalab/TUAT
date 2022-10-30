@@ -12,37 +12,41 @@
                   src="~/assets/images/imageHome.png"
               /></NuxtLink>
             </li>
-            <li>
+            <li class="icon research">
               <div class="topMenu-Unselect">
                 <NuxtLink to="/research"><b>Research</b></NuxtLink>
               </div>
             </li>
-            <li>
+            <li class="icon member">
               <div class="topMenu-Unselect">
                 <NuxtLink to="/member"><b>Member</b></NuxtLink>
               </div>
             </li>
-            <li>
+            <li class="icon publication">
               <div class="topMenu-Unselect">
                 <NuxtLink to="/publication"><b>Publication</b></NuxtLink>
               </div>
             </li>
-            <li>
+            <li class="icon software">
               <div class="topMenu-Unselect">
-                <a href="http://prime.psc.riken.jp/compms/msdial/main.html"><b>Software</b></a>
+                <a
+                  href="http://prime.psc.riken.jp/compms/msdial/main.html"
+                  target="_blank"
+                  rel="noopener"
+                  ><b>Software</b></a>
               </div>
             </li>
-            <li>
+            <li class="icon news">
               <div class="topMenu-Unselect">
                 <NuxtLink to="/news"><b>NEWS</b></NuxtLink>
               </div>
             </li>
-            <li>
+            <li class="icon lecture">
               <div class="topMenu-Unselect">
                 <NuxtLink to="/lecture"><b>Lecture</b></NuxtLink>
               </div>
             </li>
-            <li>
+            <li class="icon contact">
               <div class="topMenu-Unselect">
                 <NuxtLink :to="{ path: '/', hash:'#contact'}"><b>Contact</b></NuxtLink>
               </div>
@@ -67,6 +71,41 @@
   display: flex;
   justify-content: left;
   align-items: center;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon a:before {
+  font-family: "Awesome";
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.icon.research a:before {
+  content: '\f02d';
+}
+.icon.member a:before {
+  content: '\f2b9';
+}
+.icon.publication a:before {
+  content: '\f15c';
+}
+.icon.software a:before {
+  content: '\f095';
+}
+.icon.news a:before {
+  content: '\f4ad';
+}
+.icon.lecture a:before {
+  content: '\f2b9';
+}
+.icon.contact a:before {
+  content: '\f2bd';
 }
 
 .topMenus a {
@@ -170,58 +209,5 @@
   .topMenu-Unselect {
     font-size: 77%;
   }
-}
-
-/*
-######################################################################
-Common - Footer : Layout
-######################################################################
-*/
-#sectionFooter {
-  margin-top: 2em;
-  margin-bottom: 0.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 160px;
-  font-size: 93%;
-}
-
-#areaLogo-RIKEN {
-  padding-right: 1.5em;
-  max-width: 62px;
-}
-
-#imageLogo-RIKEN {
-  width: 100%;
-  height: auto;
-}
-
-#areaLogo-CSRS {
-  padding-right: 1.5em;
-  max-width: 111.3px;
-}
-
-#imageLogo-CSRS {
-  width: 100%;
-  height: auto;
-}
-
-#areaLogo-PRIMe {
-  padding-right: 1.5em;
-  max-width: 215.5px;
-}
-
-#imageLogo-PRIMe {
-  width: 100%;
-  height: auto;
-}
-
-#imageLogo-CCL {
-  margin-right: 2.5em;
-  margin-left: 2.5em;
-  width: 88px;
-  height: 31px;
 }
 </style>

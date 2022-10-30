@@ -1,26 +1,45 @@
 <template>
   <div id="sectionFooter">
-    <div id="areaLogo-PRIMe">
-      <a href="https://www.tuat.ac.jp/"><img id="imageLogo-PRIMe" alt="TUAT"
-          src="~/assets/images/logoTUAT.png"></a>
+    <div class="logoWrapper">
+      <div id="areaLogo-PRIMe">
+        <a href="https://www.tuat.ac.jp/"
+          ><img
+            id="imageLogo-PRIMe"
+            alt="TUAT"
+            src="~/assets/images/logoTUAT.png"
+        /></a>
+      </div>
+      <div id="areaLogo-RIKEN">
+        <a href="http://www.yokohama.riken.jp/english/"
+          ><img
+            id="imageLogo-RIKEN"
+            alt="RIKEN"
+            src="~/assets/images/logoRIKEN.gif"
+        /></a>
+      </div>
+      <div id="areaLogo-PRIMe">
+        <a href="http://prime.psc.riken.jp/"
+          ><img
+            id="imageLogo-PRIMe"
+            alt="PRIMe"
+            src="~/assets/images/logoPRIMe.png"
+        /></a>
+      </div>
     </div>
-    <div id="areaLogo-RIKEN">
-      <a href="http://www.yokohama.riken.jp/english/"><img id="imageLogo-RIKEN" alt="RIKEN"
-          src="~/assets/images/logoRIKEN.gif"></a>
-    </div>
-
-    <div id="areaLogo-PRIMe">
-      <a href="http://prime.psc.riken.jp/"><img id="imageLogo-PRIMe" alt="PRIMe"
-          src="~/assets/images/logoPRIMe.png"></a>
-    </div>
-    <div>
-      <div>Tokyo University of Agriculture and Technology (TUAT) : Organization for Promotion of Tenure-track
-        System, Department of Systems Biology</div>
-      <address>2-24-16 Nakamachi, Koganei, Tokyo 184-8588, Japan</address>
-    </div>
-    <div>
-      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img id="imageLogo-CCL"
-          alt="Creative Commons License" src="~/assets/images/88x31.png"></a>
+    <div class="organizationInfo">
+      <div>
+        Tokyo University of Agriculture and Technology (TUAT) : Organization for
+        Promotion of Tenure-track System, Department of Systems Biology
+        <address>2-24-16 Nakamachi, Koganei, Tokyo 184-8588, Japan</address>
+      </div>
+      <div>
+        <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"
+          ><img
+            id="imageLogo-CCL"
+            alt="Creative Commons License"
+            src="~/assets/images/88x31.png"
+        /></a>
+      </div>
     </div>
   </div>
 </template>
@@ -29,12 +48,23 @@
 #sectionFooter {
   margin-top: 2em;
   margin-bottom: 0.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 160px;
   font-size: 93%;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.organizationInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  font-size: 12px;
+  padding: 0 20px;
 }
 
 #areaLogo-RIKEN {
