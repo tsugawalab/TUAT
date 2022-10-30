@@ -8,6 +8,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.12"
+    "nuxt": "3.0.0-rc.12",
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "vue-gtag-next": "^1.14.0"
   }
 }
