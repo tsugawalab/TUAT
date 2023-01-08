@@ -40,7 +40,6 @@ export default {
         limit: 1,
       })
       .then((data) => {
-        console.log(data.items[0])
         return { photo: data.items[0] }
       })
       .catch((error) => {

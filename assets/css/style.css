@@ -40,7 +40,7 @@ Rule : Font
 
 @font-face {
   font-family: 'Awesome Brands';
-  src: url('~/assets/fonts/fa-brands-400.woff2') format('woff2');
+  src: url('~/assets/fonts/font-os.woff') format('woff2');
 }
 
 @font-face {
