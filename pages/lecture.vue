@@ -1,5 +1,5 @@
 <template>
-  <div class="mainFrame" id="sectionMain">
+  <div id="sectionMain" class="mainFrame lecture">
     <div class="container">
       <div class="row">
         <div class="col span_24">
@@ -11,27 +11,48 @@
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="row contensDetail">
-        <div class="col span_24">
-          <div class="boxSubLine">
-            <!-- YCU lecture 20200624: <a href="./download/R examples for lecture.zip">download</a>.<br>
-              YCU lecture 20200702: <a href="./download/20200702_インフォマティクス概論.docx">download</a>.<br> -->
-            R example code for PCA:
-            <a href="./download/rcode_pca.zip">download</a>.<br />
-            R example code for Keras:
-            <a href="./download/rcode_keras.zip">download</a>.<br />
-            R example code for Random Forest:
-            <a href="./download/rcode_randomforest.zip">download</a>.<br />
-            MS-DIAL of RIKEN server:
-            <a
-              href="http://prime.psc.riken.jp/compms/msdial/download/repository/MSDIAL ver.4.90 Windows.zip"
-              >download</a
-            >.<br />
-          </div>
-        </div>
-      </div>
-    </div>
+    <div v-html="$md.render(md)"></div>
   </div>
 </template>
+
+<script>
+import { createClient } from '~/plugins/contentful.js'
+const client = createClient()
+
+export default {
+  name: 'LecturePage',
+  async asyncData(ctx) {
+    const { i18n } = ctx.app
+    const localeMap = {
+      ja: 'ja-JP',
+      en: 'en-US',
+    }
+    return await client
+      .getEntries({
+        content_type: 'page',
+        'fields.title': 'レクチャー',
+        locale: localeMap[i18n.locale],
+        limit: 1,
+      })
+      .then((data) => {
+        return { md: data.items[0].fields.body }
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  },
+  head() {
+    return {
+      title: this.$t('lecture'),
+    }
+  },
+}
+</script>
+
+<style lang="sass">
+  .lecture
+    ul
+      li
+        list-style: initial
+        margin-bottom: 1em
+</style>

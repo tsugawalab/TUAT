@@ -4,57 +4,63 @@ Rule : Font
 ######################################################################
 */
 @font-face {
-  font-family: "PT Sans";
+  font-family: 'PT Sans';
   src: url('~/assets/fonts/PT_Sans_Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "PT Sans Italic";
+  font-family: 'PT Sans Italic';
   src: url('~/assets/fonts/PT_Sans_Italic.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "PT Sans Bold";
+  font-family: 'PT Sans Bold';
   src: url('~/assets/fonts/PT_Sans_Bold.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "PT Sans Bold Italic";
+  font-family: 'PT Sans Bold Italic';
   src: url('~/assets/fonts/PT_Sans_Bold_Italic.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "PT Sans Mono";
+  font-family: 'PT Sans Mono';
   src: url('~/assets/fonts/PT_Mono_Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "PT Sans Caption Bold";
+  font-family: 'PT Sans Caption Bold';
   src: url('~/assets/fonts/PT_Sans_Caption_Bold.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Awesome";
+  font-family: 'Awesome';
   src: url('~/assets/fonts/fa-solid-900.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Awesome Brands";
+  font-family: 'Awesome Brands';
   src: url('~/assets/fonts/fa-brands-400.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Tienne";
+  font-family: 'Tienne';
   src: url('~/assets/fonts/Tienne-Regular.woff2') format('woff2');
 }
-
 
 /*
 ######################################################################
 Rule : Action
 ######################################################################
 */
-@keyframes fadeIn { 0% { opacity: 0 } 100% { opacity: 1 }}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*
 ######################################################################
 Common : Icon
@@ -62,32 +68,32 @@ Common : Icon
 */
 .iconAwesome {
   margin-right: 0.25em;
-  font-family: "Awesome";
+  font-family: 'Awesome';
   font-size: 108%;
 }
 
 .iconAwesome-Menu {
-  font-family: "Awesome";
+  font-family: 'Awesome';
   font-size: 384%;
   color: #4696a4;
 }
 
 .iconAwesome-SubMenu {
-  font-family: "Awesome Brands";
+  font-family: 'Awesome Brands';
   font-size: 256%;
   font-weight: 400;
   color: #fbb040;
 }
 
-.mainIcon{
-  position:relative;
+.mainIcon {
+  position: relative;
 }
 
-.subIcon{
-  position:absolute;
-  top:22.5%;
-  left:54%;
-  z-index:10;
+.subIcon {
+  position: absolute;
+  top: 22.5%;
+  left: 54%;
+  z-index: 10;
 }
 
 .iconLink {
@@ -95,8 +101,8 @@ Common : Icon
   margin-left: 0.25em;
   color: #0b5fa5;
   opacity: 0.3;
-  font-family: "Awesome";
-  font-size: 108%
+  font-family: 'Awesome';
+  font-size: 108%;
 }
 
 .iconFileType {
@@ -218,20 +224,20 @@ Common : Icon
   text-align: center;
 }
 
-.imgIcon-Msdial,.imgIcon-Msfinder{
-  width:114px;
-  height:132px;
+.imgIcon-Msdial,
+.imgIcon-Msfinder {
+  width: 114px;
+  height: 132px;
 }
 
-.imgIcon-Research{
-  width:130px;
-  height:130px;
+.imgIcon-Research {
+  width: 130px;
+  height: 130px;
 }
 
-
-.imgIcon-News{
-  width:180px;
-  height:150px;
+.imgIcon-News {
+  width: 180px;
+  height: 150px;
 }
 
 .imageExLink {
@@ -257,23 +263,44 @@ Color common
 }
 
 .colorMsDial {
-  background: linear-gradient(to right, rgb(210, 221, 35, 1), rgb(62, 182, 71, 1));
+  background: linear-gradient(
+    to right,
+    rgb(210, 221, 35, 1),
+    rgb(62, 182, 71, 1)
+  );
 }
 
 .colorMsFinder {
-  background: linear-gradient(to right, rgb(140, 247, 252, 1), rgb(41, 172, 227, 1));
+  background: linear-gradient(
+    to right,
+    rgb(140, 247, 252, 1),
+    rgb(41, 172, 227, 1)
+  );
 }
 
 .colorMrmprobs {
-  background: linear-gradient(to right, rgb(240, 249, 251, 1), rgb(76, 174, 200, 1));
+  background: linear-gradient(
+    to right,
+    rgb(240, 249, 251, 1),
+    rgb(76, 174, 200, 1)
+  );
 }
 
 .colorOthers {
-  background: linear-gradient(to right, rgb(236, 236, 236, 1), rgb(194, 194, 194, 1));
+  background: linear-gradient(
+    to right,
+    rgb(236, 236, 236, 1),
+    rgb(194, 194, 194, 1)
+  );
 }
 
 .colorChangeLog {
-  background: linear-gradient(to right, rgb(236, 236, 236, 0.5), rgb(194, 194, 194, 0.5), rgb(236, 236, 236, 0.5));
+  background: linear-gradient(
+    to right,
+    rgb(236, 236, 236, 0.5),
+    rgb(194, 194, 194, 0.5),
+    rgb(236, 236, 236, 0.5)
+  );
 }
 
 .cerH {
@@ -317,12 +344,14 @@ Color common
 Main Frame
 ######################################################################
 */
-html, body {
+html,
+body {
   margin: 0 auto;
   height: 100%;
   color: #2b2b2b;
   background-color: #fffffe;
-  font: 400 62.5% 'PT Sans', "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font: 400 62.5% 'PT Sans', '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3',
+    'Hiragino Mincho ProN', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
   font-size: 100%;
   line-break: strict;
 }
@@ -359,7 +388,7 @@ Home Logo
 }
 
 .boxMainLogo:before {
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   display: block;
@@ -382,9 +411,9 @@ Home Logo
   top: 13.5%;
   left: 1%;
   width: 100%;
-  color: #FFFFFE;
+  color: #fffffe;
   text-align: center;
-  font-family: "Tienne";
+  font-family: 'Tienne';
   font-size: 450%;
   line-height: 170%;
 }
@@ -406,7 +435,7 @@ Home Logo
   top: 31.5%;
   left: 25%;
   width: 50%;
-  color: #FFFFFE;
+  color: #fffffe;
   text-align: center;
   font-size: 288%;
   line-height: 170%;
@@ -417,8 +446,8 @@ Home Logo
   top: 31.5%;
   left: 17%;
   width: 70%;
-  color: #FFFFFE;
-  font-family: "YuGothic";
+  color: #fffffe;
+  font-family: 'YuGothic';
   text-align: center;
   font-size: 200%;
   line-height: 170%;
@@ -456,7 +485,7 @@ Home Logo
   padding-bottom: 2em;
   width: 100%;
   color: #2b2b2b;
-  font-family: "YuGothic";
+  font-family: 'YuGothic';
   text-align: center;
   font-size: 182%;
   width: 80%;
@@ -495,7 +524,7 @@ Menu
   justify-content: center;
   align-items: top;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
   min-height: 350px;
   text-align: left;
 }
@@ -504,14 +533,14 @@ Menu
   margin-left: 2em;
   margin-right: 2em;
   z-index: 30;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .boxContents {
   width: 360px;
   height: 360px;
   z-index: 30;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .boxContents a {
@@ -535,7 +564,7 @@ Menu
   height: 540px;
   width: 600px;
   z-index: 30;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .boxContents-left a {
@@ -548,7 +577,7 @@ Menu
 }
 
 .boxContents-left a:hover {
-  background-color: #EAF4FC; /*IE*/
+  background-color: #eaf4fc; /*IE*/
   background-color: rgba(243, 243, 243, 0.3);
 }
 
@@ -588,7 +617,7 @@ Menu
   height: 540px;
   width: 600px;
   z-index: 30;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .boxContents-right a {
@@ -601,7 +630,7 @@ Menu
 }
 
 .boxContents-right a:hover {
-  background-color: #EAF4FC; /*IE*/
+  background-color: #eaf4fc; /*IE*/
   background-color: rgba(243, 243, 243, 0.3);
 }
 
@@ -693,7 +722,7 @@ Menu
   margin-bottom: 0.5em;
   padding-left: 1.2em;
   font-size: 123.1%;
-  font-family: 	"YuMincho";
+  font-family: 'YuMincho';
   line-height: 170%;
 }
 
@@ -727,7 +756,7 @@ Menu
   position: absolute;
   top: 1em;
   left: 2em;
-  content: "";
+  content: '';
   height: 100%;
   width: 100%;
   background: #f8fbf8;
@@ -778,7 +807,7 @@ Change log
   position: relative;
   width: 350px;
   z-index: 25;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .boxChangelog a {
@@ -791,7 +820,7 @@ Change log
 }
 
 .boxChangelog a:hover {
-  background-color: #EAF4FC; /*IE*/
+  background-color: #eaf4fc; /*IE*/
   background-color: rgba(243, 243, 243, 0.3);
 }
 
@@ -829,7 +858,7 @@ Publications
   position: absolute;
   top: 0.2em;
   left: 1em;
-  content: "";
+  content: '';
   height: 100%;
   width: 100%;
   background: #f8fbf8;
@@ -878,7 +907,7 @@ Details
   justify-content: center;
   align-items: top;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
   min-height: 400px;
   text-align: left;
 }
@@ -889,7 +918,7 @@ Details
   justify-content: center;
   align-items: top;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
   min-height: 600px;
   text-align: left;
 }
@@ -900,7 +929,7 @@ Details
   display: flex;
   justify-content: center;
   align-items: top;
-  background: #FFFFFE;
+  background: #fffffe;
   min-height: 950px;
   text-align: left;
 }
@@ -911,7 +940,7 @@ Details
   display: flex;
   justify-content: center;
   align-items: top;
-  background: #FFFFFE;
+  background: #fffffe;
   min-height: 650px;
   text-align: left;
 }
@@ -947,7 +976,7 @@ Details
   height: 480px;
   width: 600px;
   z-index: 30;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .boxContents-Objective {
@@ -963,7 +992,7 @@ Details
   position: absolute;
   top: 2.8em;
   left: 2.7em;
-  content: "";
+  content: '';
   height: 100%;
   width: 100%;
   background: #f8fbf8;
@@ -983,7 +1012,7 @@ Details
   position: absolute;
   top: 2.8em;
   left: 2.7em;
-  content: "";
+  content: '';
   height: 100%;
   width: 100%;
   background: #f8fbf8;
@@ -1003,7 +1032,7 @@ Details
   position: absolute;
   top: 2.8em;
   left: 2.7em;
-  content: "";
+  content: '';
   height: 100%;
   width: 100%;
   background: #f8fbf8;
@@ -1014,7 +1043,7 @@ Details
   margin-left: 2%;
   width: 96%;
   height: 80px;
-  background-image: linear-gradient(270deg, #fffffe, #fffffe 50%, #E5E4E6);
+  background-image: linear-gradient(270deg, #fffffe, #fffffe 50%, #e5e4e6);
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-size: 100% 3px;
@@ -1024,7 +1053,7 @@ Details
   margin-left: 2%;
   width: 96%;
   height: 140px;
-  background-image: linear-gradient(270deg, #fffffe, #fffffe 50%, #E5E4E6);
+  background-image: linear-gradient(270deg, #fffffe, #fffffe 50%, #e5e4e6);
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-size: 100% 3px;
@@ -1034,7 +1063,7 @@ Details
   margin-left: 2%;
   width: 96%;
   height: 210px;
-  background-image: linear-gradient(270deg, #fffffe, #fffffe 50%, #E5E4E6);
+  background-image: linear-gradient(270deg, #fffffe, #fffffe 50%, #e5e4e6);
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-size: 100% 3px;
@@ -1051,7 +1080,7 @@ Details
 .boxSubLine {
   margin-bottom: 1em;
   margin-left: 5%;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .labelSubLine {
@@ -1067,17 +1096,17 @@ Details
   justify-content: center;
   align-items: top;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
   height: 360px;
   width: 360px;
   text-align: left;
-  margin-right:auto;
-   margin-left:auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .labelSubTitle {
   margin-top: 0.25em;
-  margin-left: 0.20em;
+  margin-left: 0.2em;
   margin-right: 1.5em;
   font-size: 3rem;
   text-align: left;
@@ -1087,7 +1116,7 @@ Details
   width: 360px;
   height: 360px;
   z-index: 30;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .boxContents-Main a {
@@ -1110,7 +1139,7 @@ Details
   align-items: center;
   margin-left: 5%;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .labelTempName {
@@ -1127,7 +1156,7 @@ Details
   align-items: center;
   margin-left: 5%;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .labelDemoName {
@@ -1159,7 +1188,7 @@ Details
   align-items: baseline;
   margin-left: 5%;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .labelMspName {
@@ -1238,7 +1267,7 @@ Details
   align-items: center;
   margin-left: 5%;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .labelForkName {
@@ -1262,7 +1291,7 @@ Details
   align-items: center;
   margin-left: 5%;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .labelSupportName {
@@ -1286,7 +1315,7 @@ Details
   align-items: center;
   margin-left: 5%;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .labelAcknowledgementRole {
@@ -1318,7 +1347,7 @@ Details
 }
 
 .boxOthers {
-  background: #FFFFFE;
+  background: #fffffe;
   text-align: left;
 }
 
@@ -1333,7 +1362,7 @@ Details
   position: absolute;
   top: 2.8em;
   left: 2.7em;
-  content: "";
+  content: '';
   height: 100%;
   width: 100%;
   background: #f8fbf8;
@@ -1351,7 +1380,7 @@ Details
   position: absolute;
   top: 2.8em;
   left: 2.7em;
-  content: "";
+  content: '';
   height: 100%;
   width: 100%;
   background: #f8fbf8;
@@ -1369,7 +1398,7 @@ Details
   position: absolute;
   top: 2.8em;
   left: 2.7em;
-  content: "";
+  content: '';
   height: 100%;
   width: 100%;
   background: #f8fbf8;
@@ -1383,7 +1412,7 @@ Details
   align-items: center;
   margin-left: 5%;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .labelCodeName {
@@ -1412,7 +1441,7 @@ Details
   align-items: center;
   margin-left: 5%;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
 }
 
 .labelMajorAdduct {
@@ -1431,16 +1460,15 @@ Details
   width: 20rem;
 }
 
-
 .boxLabMember {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 3rem;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
   font-size: 0.95rem;
-  font-family: "YuGothic"
+  font-family: 'YuGothic';
 }
 
 .boxLabMember:nth-child(even) {
@@ -1449,16 +1477,15 @@ Details
 
 @media screen and (max-width: 2000px) {
   .boxLabMember {
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 1700px) {
   .boxLabMember {
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 }
-
 
 .labelMemberPosition {
   margin-left: 1em;
@@ -1493,7 +1520,7 @@ Details
   align-items: center;
   height: 3rem;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
   font-size: 0.95rem;
 }
 
@@ -1577,7 +1604,7 @@ Details
   width: 100%;
   height: 3rem;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
   font-size: 1.25rem;
 }
 
@@ -1600,7 +1627,7 @@ Details
   margin-left: 2%;
   width: 96%;
   height: 50px;
-  background-image: linear-gradient(270deg, #fffffe, #fffffe 50%, #E5E4E6);
+  background-image: linear-gradient(270deg, #fffffe, #fffffe 50%, #e5e4e6);
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-size: 100% 3px;
@@ -1610,7 +1637,7 @@ Details
   margin-left: 2%;
   width: 96%;
   height: 100px;
-  background-image: linear-gradient(270deg, #fffffe, #fffffe 50%, #E5E4E6);
+  background-image: linear-gradient(270deg, #fffffe, #fffffe 50%, #e5e4e6);
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-size: 100% 3px;
@@ -1642,7 +1669,7 @@ Details
   align-items: center;
   width: 100%;
   position: relative;
-  background: #FFFFFE;
+  background: #fffffe;
   font-size: 1.25rem;
 }
 
@@ -1665,18 +1692,20 @@ Details
 Sentences common
 ######################################################################
 */
-b, strong, th {
-  font-family: "PT Sans Bold";
+b,
+strong,
+th {
+  font-family: 'PT Sans Bold';
   font-weight: normal;
 }
 
 em {
-  font-family: "PT Sans Italic";
+  font-family: 'PT Sans Italic';
   font-weight: normal;
 }
 
 .emb {
-  font-family: "PT Sans Bold Italic";
+  font-family: 'PT Sans Bold Italic';
   font-weight: normal;
 }
 
@@ -1770,7 +1799,7 @@ Lipid Dialog
   padding-bottom: 0.25em;
   padding-left: 0.5em;
   width: 150px;
-  color: #FFF;
+  color: #fff;
   background: #fcfdfd;
   text-indent: 0.5em;
 }
@@ -1831,7 +1860,6 @@ Page top
   z-index: 100;
 }
 
-
 /*
 ######################################################################
 Simple Image Slider
@@ -1839,83 +1867,92 @@ Simple Image Slider
 */
 
 /*GLOBALS*/
-#slider-wrap *{margin:0; padding:0; list-style:none;}
-a{text-decoration:none; color:#666;}
-a:hover{color:#1bc1a3;}
-body, hmtl{background: #ecf0f1; font-family: 'Anton', sans-serif;}
+#slider-wrap * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+a:hover {
+  color: #1bc1a3;
+}
+body,
+hmtl {
+  background: #ffffff;
+  font-family: 'Anton', sans-serif;
+}
 
-
-#wrapper{
-  width:1200px;
-  margin:50px auto;
+#wrapper {
+  width: 1200px;
+  margin: 50px auto;
   margin-top: 100px;
-  height:675px;
-  position:relative;
-  color:#fff;
-  text-shadow:rgba(0,0,0,0.1) 2px 2px 0px;
+  position: relative;
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.1) 2px 2px 0px;
 }
 
-#slider-wrap{
-  width:1200px;
-  height:675px;
-  position:relative;
-  overflow:hidden;
+#slider-wrap {
+  width: 1200px;
+  height: 675px;
+  position: relative;
+  overflow: hidden;
 }
 
-#slider-wrap ul#slider{
-  width:100%;
-  height:100%;
+#slider-wrap ul#slider {
+  width: 100%;
+  height: 100%;
 
-  position:absolute;
-  top:0;
-  left:0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-#slider-wrap ul#slider li{
-  float:left;
-  position:relative;
-  width:1200px;
-  height:675px;
+#slider-wrap ul#slider li {
+  float: left;
+  position: relative;
+  width: 1200px;
+  height: 675px;
 }
 
-#slider-wrap ul#slider li > div{
-  position:absolute;
-  top:20px;
-  left:35px;
+#slider-wrap ul#slider li > div {
+  position: absolute;
+  top: 20px;
+  left: 35px;
 }
 
-#slider-wrap ul#slider li > div h3{
-  font-size:36px;
-  text-transform:uppercase;
+#slider-wrap ul#slider li > div h3 {
+  font-size: 36px;
+  text-transform: uppercase;
 }
 
-#slider-wrap ul#slider li > div span{
+#slider-wrap ul#slider li > div span {
   font-family: Neucha, Arial, sans serif;
-  font-size:21px;
+  font-size: 21px;
 }
 
-#slider-wrap ul#slider li i{
-  text-align:center;
-  line-height:675px;
-  display:block;
-  width:100%;
-  font-size:90px;
+#slider-wrap ul#slider li i {
+  text-align: center;
+  line-height: 675px;
+  display: block;
+  width: 100%;
+  font-size: 90px;
 }
-
 
 /*btns*/
-.btns{
-  position:absolute;
-  width:50px;
-  height:60px;
-  top:50%;
-  margin-top:-25px;
-  line-height:57px;
-  text-align:center;
-  cursor:pointer;
-  background:rgba(0,0,0,0.1);
-  z-index:100;
-
+.btns {
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  top: 50%;
+  margin-top: -25px;
+  line-height: 57px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 100;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1929,76 +1966,91 @@ body, hmtl{background: #ecf0f1; font-family: 'Anton', sans-serif;}
   transition: all 0.1s ease;
 }
 
-.btns:hover{
-  background:rgba(0,0,0,0.3);
+.btns:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 
-#next{right:-50px; border-radius:7px 0px 0px 7px;}
-#previous{left:-50px; border-radius:0px 7px 7px 7px;}
-#counter{
+#next {
+  right: -50px;
+  border-radius: 7px 0px 0px 7px;
+}
+#previous {
+  left: -50px;
+  border-radius: 0px 7px 7px 7px;
+}
+#counter {
   top: 30px;
-  right:35px;
-  width:auto;
-  position:absolute;
+  right: 35px;
+  width: auto;
+  position: absolute;
 }
 
-#slider-wrap.active #next{right:0px;}
-#slider-wrap.active #previous{left:0px;}
-
+#slider-wrap.active #next {
+  right: 0px;
+}
+#slider-wrap.active #previous {
+  left: 0px;
+}
 
 /*bar*/
-#pagination-wrap{
-  min-width:20px;
-  margin-top:350px;
+#pagination-wrap {
+  min-width: 20px;
+  margin-top: 350px;
   margin-left: auto;
   margin-right: auto;
-  height:15px;
-  position:relative;
-  text-align:center;
+  height: 15px;
+  position: relative;
+  text-align: center;
 }
 
 #pagination-wrap ul {
-  width:100%;
+  width: 100%;
 }
 
-#pagination-wrap ul li{
+#pagination-wrap ul li {
   margin: 0 4px;
   display: inline-block;
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:#fff;
-  opacity:0.5;
-  position:relative;
-  top:0;
-
-
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.5;
+  position: relative;
+  top: 0;
 }
 
-#pagination-wrap ul li.active{
-  width:12px;
-  height:12px;
-  top:3px;
-  opacity:1;
-  box-shadow:rgba(0,0,0,0.1) 1px 1px 0px;
+#pagination-wrap ul li.active {
+  width: 12px;
+  height: 12px;
+  top: 3px;
+  opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
 }
-
-
-
 
 /*Header*/
-h1, h2{text-shadow:none; text-align:center;}
-h1{ color: #666; text-transform:uppercase;  font-size:36px;}
-h2{ color: #7f8c8d; font-family: Neucha, Arial, sans serif; font-size:18px; margin-bottom:30px;}
-
-
-
+h1,
+h2 {
+  text-shadow: none;
+  text-align: center;
+}
+h1 {
+  color: #666;
+  text-transform: uppercase;
+  font-size: 36px;
+}
+h2 {
+  color: #7f8c8d;
+  font-family: Neucha, Arial, sans serif;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
 
 /*ANIMATION*/
-#slider-wrap ul, #pagination-wrap ul li{
-  -webkit-transition: all 0.3s cubic-bezier(1,.01,.32,1);
-  -moz-transition: all 0.3s cubic-bezier(1,.01,.32,1);
-  -o-transition: all 0.3s cubic-bezier(1,.01,.32,1);
-  -ms-transition: all 0.3s cubic-bezier(1,.01,.32,1);
-  transition: all 0.3s cubic-bezier(1,.01,.32,1);
+#slider-wrap ul,
+#pagination-wrap ul li {
+  -webkit-transition: all 0.3s cubic-bezier(1, 0.01, 0.32, 1);
+  -moz-transition: all 0.3s cubic-bezier(1, 0.01, 0.32, 1);
+  -o-transition: all 0.3s cubic-bezier(1, 0.01, 0.32, 1);
+  -ms-transition: all 0.3s cubic-bezier(1, 0.01, 0.32, 1);
+  transition: all 0.3s cubic-bezier(1, 0.01, 0.32, 1);
 }

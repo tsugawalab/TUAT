@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="sectionNavigation">
+  <div id="sectionNavigation" class="container">
     <div class="row">
       <div class="col span_24">
         <nav>
@@ -33,7 +33,8 @@
                   href="http://prime.psc.riken.jp/compms/msdial/main.html"
                   target="_blank"
                   rel="noopener"
-                  ><b>Software</b></a>
+                  ><b>Software</b></a
+                >
               </div>
             </li>
             <li class="icon news">
@@ -48,7 +49,9 @@
             </li>
             <li class="icon contact">
               <div class="topMenu-Unselect">
-                <NuxtLink :to="{ path: '/', hash:'#contact'}"><b>Contact</b></NuxtLink>
+                <NuxtLink :to="{ path: '/', hash: '#contact' }"
+                  ><b>Contact</b></NuxtLink
+                >
               </div>
             </li>
           </ul>
@@ -80,7 +83,7 @@
 }
 
 .icon a:before {
-  font-family: "Awesome";
+  font-family: 'Awesome';
   width: 14px;
   height: 14px;
   display: inline-block;
@@ -114,7 +117,7 @@
   position: absolute;
   top: 0.25em;
   left: 10px;
-  content: "";
+  content: '';
   color: #fffffe;
 }
 
@@ -162,7 +165,7 @@
 
 .topMenu-State {
   margin-right: 0.5em;
-  font-family: "Awesome";
+  font-family: 'Awesome';
   font-size: 108%;
 }
 

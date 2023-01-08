@@ -1,5 +1,5 @@
 <template>
-  <div class="mainFrame" id="sectionMain">
+  <div id="sectionMain" class="mainFrame news">
     <!-- Publications -->
     <div class="container">
       <div class="row">
@@ -9,48 +9,44 @@
               <span class="iconAwesome-Menu">&#xf4ad;</span>
             </div>
             <div class="labelMenuTitle">News & Events</div>
-            <div class="container">
-              <div class="row contensDetail">
-                <div class="col span_24">
-                  <div class="boxLabMember">
-                    <div class="labelMemberPosition">
-                      <div>
-                        <b>Date</b>
-                      </div>
-                    </div>
-                    <div class="labelNewsDescription">
-                      <div>
-                        <b>Description</b>
-                      </div>
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="boxLabMember">
-                    <div class="labelMemberPosition">
-                      <div>October 6th, 2021</div>
-                    </div>
-                    <div class="labelNewsDescription">
-                      <div>
-                        当研究室に5名の学生が配属されました。一期生です！
-                      </div>
-                    </div>
-                  </div>
-                  <div class="boxLabMember">
-                    <div class="labelMemberPosition">
-                      <div>April 1st, 2021</div>
-                    </div>
-                    <div class="labelNewsDescription">
-                      <div>
-                        システムバイオロジー分野・代謝オミクス科学研究室の発足に伴い、津川裕司と松沢佑紀が着任しました。
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div v-html="$md.render(md)"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { createClient } from '~/plugins/contentful.js'
+const client = createClient()
+
+export default {
+  name: 'NewsPage',
+  async asyncData(ctx) {
+    const { i18n } = ctx.app
+    const localeMap = {
+      ja: 'ja-JP',
+      en: 'en-US',
+    }
+    return await client
+      .getEntries({
+        content_type: 'page',
+        'fields.title': 'ニュース',
+        locale: localeMap[i18n.locale],
+        limit: 1,
+      })
+      .then((data) => {
+        return { md: data.items[0].fields.body }
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  },
+  head() {
+    return {
+      title: this.$t('news'),
+    }
+  },
+}
+</script>

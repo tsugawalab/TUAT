@@ -1,78 +1,95 @@
 <template>
-  <div class="mainFrame" id="sectionMain">
-    <div class="container">
-      <div class="row">
-        <div class="col span_24">
-          <div id="wrapper">
-            <h1>生命工学における研究のあり方（持論）</h1>
-            <div id="slider-wrap">
-              <ul id="slider">
-                <li data-color="#1abc9c">
-                  <div>
-                    <h3>Slide #1</h3>
-                    <span>Sub-title #1</span>
-                  </div>
-                  <!-- <i class="fa fa-image"></i> -->
-                  <img
-                    class="imageResearchSlide"
-                    alt="CompMS Home"
-                    src="~/assets/images/imagePhotoHome2.jpg"
-                  />
-                </li>
-                <li data-color="#3498db">
-                  <div>
-                    <h3>Slide #2</h3>
-                    <span>Sub-title #2</span>
-                  </div>
-                  <i class="fa fa-gears"></i>
-                </li>
-                <li data-color="#9b59b6">
-                  <div>
-                    <h3>Slide #3</h3>
-                    <span>Sub-title #3</span>
-                  </div>
-                  <i class="fa fa-sliders"></i>
-                </li>
-                <li data-color="#34495e">
-                  <div>
-                    <h3>Slide #4</h3>
-                    <span>Sub-title #4</span>
-                  </div>
-                  <i class="fa fa-code"></i>
-                </li>
-                <li data-color="#e74c3c">
-                  <div>
-                    <h3>Slide #5</h3>
-                    <span>Sub-title #5</span>
-                  </div>
-                  <i class="fa fa-microphone-slash"></i>
-                </li>
-                <li data-color="#e74c3c">
-                  <div>
-                    <h3>Slide #5</h3>
-                    <span>Sub-title #5</span>
-                  </div>
-                  <i class="fa fa-microphone-slash"></i>
-                </li>
-              </ul>
-              <!--controls-->
-              <div class="btns" id="next">
-                <i class="fa fa-arrow-right"></i>
-              </div>
-              <div class="btns" id="previous">
-                <i class="fa fa-arrow-left"></i>
-              </div>
-              <div id="counter"></div>
-              <div id="pagination-wrap">
-                <ul></ul>
-              </div>
-              <!--controls-->
+  <div id="sectionMain" class="mainFrame research">
+    <div id="wrapper">
+      <h1>生命工学における研究のあり方（持論）</h1>
+      <div class="slider-wrapper">
+        <swiper :options="swiperOption">
+          <swiper-slide v-for="(slide, index) in photo.fields.photo" :key="slide.sys.id">
+            <img :src="slide.fields.file.url" :alt="slide.fields.title" class="img" />
+            <div class="pageInfo">
+              <div class="title" data-swiper-parallax="-100">SLIDE #{{ index + 1 }}</div>
+              <div class="currentPage" data-swiper-parallax="-360">{{ index + 1 }} / {{ photo.fields.photo.length }}</div>
             </div>
-            <h1>Oral talks</h1>
-            <h2>By Hiroshi Tsugawa</h2>
-          </div>
-        </div>
+          </swiper-slide>
+        </swiper>
+        <div
+          slot="button-prev"
+          class="swiper-button-prev"
+        ></div>
+        <div
+          slot="button-next"
+          class="swiper-button-next"
+        ></div>
       </div>
+      <h1>Oral talks</h1>
+      <h2>By Hiroshi Tsugawa</h2>
     </div>
   </div>
 </template>
+
+<script>
+import { createClient } from '~/plugins/contentful.js'
+const client = createClient()
+
+export default {
+  name: 'ResearchPage',
+  async asyncData() {
+    return await client
+      .getEntries({
+        content_type: 'photos',
+        limit: 1,
+      })
+      .then((data) => {
+        console.log(data.items[0])
+        return { photo: data.items[0] }
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  },
+  data() {
+    return {
+      swiperOption: {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      },
+    }
+  },
+  head() {
+    return {
+      title: this.$t('member'),
+    }
+  }
+}
+</script>
+
+<style lang="sass" scoped>
+.slider-wrapper
+  position: relative
+  .img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  .pageInfo
+    display: flex
+    font-family: 'Anton', sans-serif
+    justify-content: space-between
+    position: absolute
+    top: 20px
+    left: 50%
+    width: 95%
+    transform: translateX(-50%)
+    font-weight: bold
+    .title
+      font-size: 30px
+    .currentPage
+      font-size: 16px
+</style>
