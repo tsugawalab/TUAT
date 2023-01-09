@@ -2,24 +2,8 @@
   <div id="sectionMain" class="mainFrame research">
     <div id="wrapper">
       <h1>{{ $t('research_title') }}</h1>
-      <div class="slider-wrapper">
-        <swiper :options="swiperOption">
-          <swiper-slide v-for="(slide, index) in photo.fields.photo" :key="slide.sys.id">
-            <img :src="slide.fields.file.url" :alt="slide.fields.title" class="img" />
-            <div class="pageInfo">
-              <div class="title" data-swiper-parallax="-100">SLIDE #{{ index + 1 }}</div>
-              <div class="currentPage" data-swiper-parallax="-360">{{ index + 1 }} / {{ photo.fields.photo.length }}</div>
-            </div>
-          </swiper-slide>
-        </swiper>
-        <div
-          slot="button-prev"
-          class="swiper-button-prev"
-        ></div>
-        <div
-          slot="button-next"
-          class="swiper-button-next"
-        ></div>
+      <div class="iframeWrapper">
+        <iframe src="https://onedrive.live.com/embed?resid=F1D3FF272E1AA460%21335&amp;authkey=!ALpsuOQPuSypfN8&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=0" frameborder="0">これは、<a target="_blank" href="https://office.com/webapps">Office</a> の機能を利用した、<a target="_blank" href="https://office.com">Microsoft Office</a> の埋め込み型のプレゼンテーションです。</iframe>
       </div>
       <h1>Oral talks</h1>
       <h2>By Hiroshi Tsugawa</h2>
@@ -28,40 +12,8 @@
 </template>
 
 <script>
-import { createClient } from '~/plugins/contentful.js'
-const client = createClient()
-
 export default {
   name: 'ResearchPage',
-  async asyncData() {
-    return await client
-      .getEntries({
-        content_type: 'photos',
-        limit: 1,
-      })
-      .then((data) => {
-        return { photo: data.items[0] }
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  },
-  data() {
-    return {
-      swiperOption: {
-        slidesPerView: 1,
-        loop: true,
-        autoplay: {
-          delay: 3500,
-          disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      },
-    }
-  },
   head() {
     return {
       title: this.$t('member'),
@@ -71,24 +23,16 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.slider-wrapper
+.iframeWrapper
+  width: 100%
+  max-width: 1000px
+  margin: 0 auto
+  padding-bottom: 48.8%
   position: relative
-  .img
+  > iframe
     width: 100%
     height: 100%
-    object-fit: cover
-  .pageInfo
-    display: flex
-    font-family: 'Anton', sans-serif
-    justify-content: space-between
     position: absolute
-    top: 20px
-    left: 50%
-    width: 95%
-    transform: translateX(-50%)
-    font-weight: bold
-    .title
-      font-size: 30px
-    .currentPage
-      font-size: 16px
+    top: 0
+    left: 0
 </style>
