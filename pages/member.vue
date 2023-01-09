@@ -22,7 +22,7 @@ export default {
     return await client
       .getEntries({
         content_type: 'page',
-        'fields.title': 'メンバー',
+        'fields.title': i18n.locale === 'en' ? 'Member' : 'メンバー',
         locale: localeMap[i18n.locale],
         limit: 1,
       })
