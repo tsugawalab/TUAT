@@ -3,7 +3,7 @@
     <div id="wrapper">
       <h1>{{ $t('research_title') }}</h1>
       <div class="iframeWrapper">
-        <iframe src="https://onedrive.live.com/embed?resid=F1D3FF272E1AA460%21335&amp;authkey=!ALpsuOQPuSypfN8&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=0" frameborder="0">これは、<a target="_blank" href="https://office.com/webapps">Office</a> の機能を利用した、<a target="_blank" href="https://office.com">Microsoft Office</a> の埋め込み型のプレゼンテーションです。</iframe>
+        <iframe src="https://onedrive.live.com/embed?cid=F1D3FF272E1AA460&resid=F1D3FF272E1AA460%21335&authkey=AJtY3uNfdtQ6Ma8&em=2" frameborder="0" scrolling="no"></iframe>
       </div>
       <h1>Oral talks</h1>
       <h2>By Hiroshi Tsugawa</h2>
