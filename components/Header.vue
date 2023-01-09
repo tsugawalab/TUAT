@@ -5,7 +5,7 @@
         <nav>
           <ul class="topMenus">
             <li>
-              <NuxtLink to="/"
+              <NuxtLink :to="localePath('/')"
                 ><img
                   class="imageLogo-cms"
                   alt="CompMS Home"
