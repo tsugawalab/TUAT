@@ -38,7 +38,7 @@
           <div class="boxMenu">
             <div class="boxOrverwidth-left colorMsFinder"></div>
             <div class="boxContents-left">
-              <a :href="contents[0].link"></a>
+              <NuxtLink :to="contents[0].link"></NuxtLink>
               <div class="labelMenuIcon">
                 <img
                   class="imgIcon-Research"
@@ -112,7 +112,7 @@
           <div class="boxMenu">
             <div class="boxOrverwidth-left colorMrmprobs"></div>
             <div class="boxContents-left">
-              <a :href="contents[2].link"></a>
+              <NuxtLink :to="contents[2].link"></NuxtLink>
               <div class="labelMenuIcon">
                 <img class="imgIcon-News" src="~/assets/images/iconNews.png" />
               </div>
