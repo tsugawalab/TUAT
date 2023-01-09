@@ -1,7 +1,7 @@
 <template>
   <div id="sectionMain" class="mainFrame research">
     <div id="wrapper">
-      <h1>生命工学における研究のあり方（持論）</h1>
+      <h1>{{ $t('research_title') }}</h1>
       <div class="slider-wrapper">
         <swiper :options="swiperOption">
           <swiper-slide v-for="(slide, index) in photo.fields.photo" :key="slide.sys.id">

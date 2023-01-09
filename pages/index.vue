@@ -10,10 +10,10 @@
               src="~/assets/images/imagePhotoHome2.jpg"
             />
             <div class="labelLogo">
-              <span class="iconAwesome">&#xf036;</span>システムバイオロジー分野
+              <span class="iconAwesome">&#xf036;</span>{{ $t('systems_biology') }}
             </div>
             <div class="labelPhrase-jpn">
-              生物学・化学・情報科学の融合研究による代謝オミクス科学
+              {{ $t('top_description') }}
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@
         <div class="col span_24">
           <div>
             <div class="labelLine-jpn">
-              質量分析を軸としたオミクス科学により生命の代謝システムの解明を目指します。
+              {{ $t('top_sub_text') }}
             </div>
           </div>
         </div>

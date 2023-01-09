@@ -50,7 +50,6 @@
   margin-bottom: 0.5em;
   width: 100%;
   height: 160px;
-  font-size: 93%;
 }
 
 .logoWrapper {

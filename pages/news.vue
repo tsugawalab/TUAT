@@ -32,7 +32,7 @@ export default {
     return await client
       .getEntries({
         content_type: 'page',
-        'fields.title': 'ニュース',
+        'fields.title': i18n.locale === 'en' ? 'News' : 'ニュース',
         locale: localeMap[i18n.locale],
         limit: 1,
       })

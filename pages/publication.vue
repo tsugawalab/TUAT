@@ -35,7 +35,7 @@ export default {
     return await client
       .getEntries({
         content_type: 'page',
-        'fields.title': '研究成果',
+        'fields.title': i18n.locale === 'en' ? 'Publication' : '研究成果',
         locale: localeMap[i18n.locale],
         limit: 1,
       })

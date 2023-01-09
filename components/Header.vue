@@ -14,17 +14,17 @@
             </li>
             <li class="icon research">
               <div class="topMenu-Unselect">
-                <NuxtLink to="/research"><b>Research</b></NuxtLink>
+                <NuxtLink :to="localePath('/research')"><b>Research</b></NuxtLink>
               </div>
             </li>
             <li class="icon member">
               <div class="topMenu-Unselect">
-                <NuxtLink to="/member"><b>Member</b></NuxtLink>
+                <NuxtLink :to="localePath('/member')"><b>Member</b></NuxtLink>
               </div>
             </li>
             <li class="icon publication">
               <div class="topMenu-Unselect">
-                <NuxtLink to="/publication"><b>Publication</b></NuxtLink>
+                <NuxtLink :to="localePath('/publication')"><b>Publication</b></NuxtLink>
               </div>
             </li>
             <li class="icon software">
@@ -39,20 +39,30 @@
             </li>
             <li class="icon news">
               <div class="topMenu-Unselect">
-                <NuxtLink to="/news"><b>NEWS</b></NuxtLink>
+                <NuxtLink :to="localePath('/news')"><b>News</b></NuxtLink>
               </div>
             </li>
             <li class="icon lecture">
               <div class="topMenu-Unselect">
-                <NuxtLink to="/lecture"><b>Lecture</b></NuxtLink>
+                <NuxtLink :to="localePath('/lecture')"><b>Lecture</b></NuxtLink>
               </div>
             </li>
             <li class="icon contact">
               <div class="topMenu-Unselect">
-                <NuxtLink :to="{ path: '/', hash: '#contact' }"
+                <NuxtLink :to="localePath({ path: '/', hash: '#contact' })"
                   ><b>Contact</b></NuxtLink
                 >
               </div>
+            </li>
+            <li class="locale">
+              <template v-for="(locale, i) in $i18n.locales">
+                <nuxtLink
+                  :key="`link${locale.code}`"
+                  :to="switchLocalePath(locale.code)"
+                  >{{ locale.code.toUpperCase() }}</nuxtLink
+                ><!--
+             --><span v-if="i === 0" :key="`slash${locale.code}`" class="slash">/</span>
+              </template>
             </li>
           </ul>
         </nav>
@@ -72,8 +82,12 @@
 
 .topMenus {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
+  margin: 14px 30px 8px;
+  font-size: 14px;
+  padding: 0;
+  min-width: 800px;
 }
 
 .icon a {
@@ -156,6 +170,22 @@
   background-color: #4696a4;
 }
 
+.topMenus li.locale a {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.topMenus li.locale .slash {
+  margin: 0 6px;
+}
+
+.topMenus li.locale a.nuxt-link-exact-active {
+  color: rgba(0, 0, 0, .3);
+  pointer-events: none;
+  font-weight: normal;
+}
+
 @media (min-width: 768px) {
   .topMenus .subMenus {
     position: absolute;
@@ -180,33 +210,7 @@
   height: 675px;
 }
 
-/* #### Menu Selecter #### */
-.topMenu-Select,
-.topMenu-Unselect {
-  margin-right: 0.5em;
-  margin-left: 0.5em;
-  padding-top: 0.1em;
-  padding-right: 2em;
-  padding-bottom: 0.1em;
-  padding-left: 3em;
-  width: 100%;
-}
-
 .topMenu-Unselect {
   color: #0b5fa5;
-}
-
-@media screen and (max-width: 1700px) {
-  .topMenu-Uselect,
-  .topMenu-Unselect {
-    font-size: 93%;
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  .topMenu-Uselect,
-  .topMenu-Unselect {
-    font-size: 77%;
-  }
 }
 </style>
