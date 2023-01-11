@@ -147,7 +147,10 @@
             </div>
             <div class="labelMenuTitle">Contact</div>
             <div class="labelContact">
-              <img src="~/assets/images/htsugawa.png" />
+              <img
+                src="~/assets/images/htsugawa.png"
+                class="profileImage"
+              />
             </div>
             <div class="labelContact">{{ contact.name }}</div>
             <div class="labelContact">
@@ -203,3 +206,9 @@ export default {
   },
 }
 </script>
+
+<style lang="sass" scoped>
+img.profileImage
+  width: 200px
+  height: auto
+</style>
