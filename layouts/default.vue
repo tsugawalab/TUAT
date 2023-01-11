@@ -32,4 +32,7 @@
     li
       list-style: decimal
       margin-bottom: 1em
+  img
+    width: 100%
+    height: auto
 </style>
