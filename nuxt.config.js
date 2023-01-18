@@ -72,7 +72,7 @@ export default {
     vendor: ['vue-awesome-swiper'],
   },
   router: {
-    base: '/TUAT/',
+    base: '/',
   },
   i18n: {
     locales: [
