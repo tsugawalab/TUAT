@@ -39,7 +39,7 @@ export default {
   },
   head() {
     return {
-      title: this.$t('member'),
+      title: this.$t('research'),
     }
   }
 }
