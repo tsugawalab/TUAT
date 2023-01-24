@@ -18,6 +18,11 @@ jobs:
         run: |
           yarn
           yarn generate
+        env:
+          CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
+          CTF_PERSON_ID: ${{ secrets.CTF_PERSON_ID }}
+          CTF_PREVIEW_ACCESS_TOKEN: ${{ secrets.CTF_PREVIEW_ACCESS_TOKEN }}
+          CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
