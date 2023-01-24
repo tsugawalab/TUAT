@@ -1,6 +1,5 @@
 import ja from './static/json/ja.json'
 import en from './static/json/en.json'
-import config from './.contentful.json'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -9,10 +8,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_PREVIEW_ACCESS_TOKEN: config.CTF_PREVIEW_ACCESS_TOKEN,
-    CTF_PERSON_ID: config.CTF_PERSON_ID,
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
+    CTF_PREVIEW_ACCESS_TOKEN: process.env.CTF_PREVIEW_ACCESS_TOKEN,
+    CTF_PERSON_ID: process.env.CTF_PERSON_ID,
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
