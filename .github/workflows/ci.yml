@@ -18,10 +18,10 @@ jobs:
       - name: Generate static page
         run: |
           touch .env
-          echo CTF_CDA_ACCESS_TOKEN="15jwOBqpxqSAOy2eOO4S0m" > .env
-          echo CTF_PERSON_ID="0zag513o0dj7" >> .env
-          echo CTF_PREVIEW_ACCESS_TOKEN="85Q0rhBP9nC80sP3go1CEQIRLUZYyVovYahwluoVMQk" >> .env
-          echo CTF_SPACE_ID="Pxp38o7fUMQfIii6s9uG7iKLx9K9vqK-cZ8dwU3s8rA" >> .env
+          echo CTF_CDA_ACCESS_TOKEN="85Q0rhBP9nC80sP3go1CEQIRLUZYyVovYahwluoVMQk" > .env
+          echo CTF_PERSON_ID="15jwOBqpxqSAOy2eOO4S0m" >> .env
+          echo CTF_PREVIEW_ACCESS_TOKEN="Pxp38o7fUMQfIii6s9uG7iKLx9K9vqK" >> .env
+          echo CTF_SPACE_ID="0zag513o0dj7" >> .env
           yarn generate
         working-directory: ./
       - name: Deploy 🚀
