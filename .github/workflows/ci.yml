@@ -16,14 +16,14 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: yarn
       - name: Generate static page
-        env:
-          CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
-          CTF_PERSON_ID: ${{ secrets.CTF_PERSON_ID }}
-          CTF_PREVIEW_ACCESS_TOKEN: ${{ secrets.CTF_PREVIEW_ACCESS_TOKEN }}
-          CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
         run: yarn generate
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           BRANCH: gh-pages
           FOLDER: dist
+        env:
+          CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
+          CTF_PERSON_ID: ${{ secrets.CTF_PERSON_ID }}
+          CTF_PREVIEW_ACCESS_TOKEN: ${{ secrets.CTF_PREVIEW_ACCESS_TOKEN }}
+          CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
