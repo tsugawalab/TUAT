@@ -17,10 +17,10 @@ jobs:
         run: yarn
       - name: Generate static page
         env:
-          CTF_PERSON_ID: "15jwOBqpxqSAOy2eOO4S0m"
-          CTF_SPACE_ID: "0zag513o0dj7"
-          CTF_CDA_ACCESS_TOKEN: "85Q0rhBP9nC80sP3go1CEQIRLUZYyVovYahwluoVMQk"
-          CTF_PREVIEW_ACCESS_TOKEN: "Pxp38o7fUMQfIii6s9uG7iKLx9K9vqK-cZ8dwU3s8rA"
+          CTF_PERSON_ID: ${{ secrets.CTF_PERSON_ID }}
+          CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
+          CTF_CDA_ACCESS_TOKEN: ${{ secrets.CTF_CDA_ACCESS_TOKEN }}
+          CTF_PREVIEW_ACCESS_TOKEN: ${{ secrets.CTF_PREVIEW_ACCESS_TOKEN }}
         run: yarn generate
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
