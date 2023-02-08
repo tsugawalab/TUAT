@@ -14,6 +14,11 @@ jobs:
           persist-credentials: false
       - name: Install dependencies 👨🏻‍💻
         run: yarn install --immutable --immutable-cache --check-cache
+      - name: checkEnv
+        run: |
+          echo $CTF_PERSON_ID
+        env:
+          CTF_PERSON_ID: ${{ secrets.CTF_PERSON_ID }}
       - name: Generate static page
         env:
           CTF_PERSON_ID: ${{ secrets.CTF_PERSON_ID }}
@@ -24,5 +29,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          BRANCH: gh-pages
-          FOLDER: dist
+          branch: gh-pages
+          folder: dist
