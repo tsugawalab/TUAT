@@ -13,7 +13,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Install dependencies 👨🏻‍💻
-        run: yarn
+        run: yarn ci
       - name: Generate static page
         env:
           CTF_PERSON_ID: ${{ secrets.CTF_PERSON_ID }}
