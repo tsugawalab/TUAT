@@ -7,7 +7,7 @@
             <div class="labelMenuIcon-publication">
               <span class="iconAwesome-Menu">&#xf4ad;</span>
             </div>
-            <div class="labelMenuTitle">News & Events</div>
+            <div class="labelMenuTitle">{{ $t(categoryTitle) }}</div>
             <SingleNews v-if="$route.query.id" />
             <template v-else>
               <ul class="news_wrapper">
@@ -33,7 +33,7 @@ const client = createClient()
 export const POSTS_PER_PAGE = 15;
 
 export default {
-  name: 'NewsPage',
+  name: 'CategoryPage',
   components: { NewsList, SingleNews, PaginationElements },
   async asyncData(ctx) {
     if (ctx.route.query.id) return
@@ -42,16 +42,18 @@ export default {
       ja: 'ja-JP',
       en: 'en-US',
     }
+    const categoryId = ctx.route.query.categoryId
     return await client
       .getEntries({
         content_type: 'news',
         locale: localeMap[i18n.locale],
-        order: "-fields.publishDate",
+        order: '-fields.publishDate',
         limit: POSTS_PER_PAGE,
-        skip: (Number(ctx.route.query.page) - 1) * POSTS_PER_PAGE
+        skip: (Number(ctx.route.query.page) - 1) * POSTS_PER_PAGE,
+        ...( categoryId ? { 'fields.category.sys.id': categoryId } : {})
       })
       .then((data) => {
-        return { newsList: data.items, totalEntry: data.total }
+        return { newsList: data.items, totalEntry: data.total, categoryTitle: data.includes.Entry[0].fields.id }
       })
       .catch((error) => {
         console.error(error)

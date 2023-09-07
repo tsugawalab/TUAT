@@ -39,7 +39,7 @@
             </li>
             <li class="icon news">
               <div class="topMenu-Unselect">
-                <NuxtLink :to="localePath('/news')"><b>News</b></NuxtLink>
+                <NuxtLink :to="localePath('/news?page=1')"><b>News</b></NuxtLink>
               </div>
             </li>
             <li class="icon lecture">
