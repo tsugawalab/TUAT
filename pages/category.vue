@@ -35,6 +35,9 @@ export const POSTS_PER_PAGE = 15;
 export default {
   name: 'CategoryPage',
   components: { NewsList, SingleNews, PaginationElements },
+  middleware({ route, redirect }){
+    if (!route.query.page) redirect('/news?page=1')
+  },
   async asyncData(ctx) {
     if (ctx.route.query.id) return
     const { i18n } = ctx.app
