@@ -36,7 +36,7 @@ export default {
   name: 'CategoryPage',
   components: { NewsList, SingleNews, PaginationElements },
   middleware({ route, redirect }){
-    if (!route.query.page) redirect('/news?page=1')
+    if (!route.query.id && !route.query.page) redirect('/news?page=1')
   },
   async asyncData(ctx) {
     if (ctx.route.query.id) return
