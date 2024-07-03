@@ -30,7 +30,7 @@
             <li class="icon software">
               <div class="topMenu-Unselect">
                 <a
-                  href="http://prime.psc.riken.jp/compms/msdial/main.html"
+                  href="https://systemsomicslab.github.io/compms/msdial/main.html"
                   target="_blank"
                   rel="noopener"
                   ><b>Software</b></a
