@@ -1,14 +1,4 @@
 /*!
- * The buffer module from node.js, for the browser.
- *
- * @author   Feross Aboukhadijeh <http://feross.org>
- * @license  MIT
- */
-
-/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
-
-
-/*!
  * vue-awesome-swiper v4.1.1
  * Copyright (c) Surmon. All rights reserved.
  * Released under the MIT License.
@@ -43,6 +33,16 @@ and limitations under the License.
 ***************************************************************************** */
 
 /*! https://mths.be/punycode v1.4.1 by @mathias */
+
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
+
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 
 
 /*!
